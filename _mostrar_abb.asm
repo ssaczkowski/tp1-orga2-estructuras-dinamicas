@@ -1,6 +1,8 @@
+global _mostrar_abb
+
 extern _printf
 
-global _imprimirArbol
+
 
 section .data
 msg1:    db "IMPRIMO ARBOL BINARIO EN PRE-ORDEN", 10, 0
@@ -9,7 +11,7 @@ NULL equ 0
 section .text
 
 
-_imprimirArbol:
+_mostrar_abb:
     push EBP
     mov EBP, ESP
     sub ESP, 4
@@ -38,7 +40,7 @@ _imprimirArbol:
         push EBP
         mov EBP, ESP
         push edi
-        call _imprimirArbol
+        call _mostrar_abb
         pop edi
         pop ebp 
      
@@ -51,7 +53,7 @@ _imprimirArbol:
         push EBP
         mov EBP, ESP
         push edi
-        call _imprimirArbol
+        call _mostrar_abb
         pop edi
         pop ebp 
      

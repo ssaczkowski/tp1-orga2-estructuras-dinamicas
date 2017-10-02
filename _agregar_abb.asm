@@ -1,3 +1,5 @@
+global _agregar_abb
+
 section .data
 msg:    db     "PARTE IZQ", 10, 0
 msg1:    db    "PARTE DER %d  %d", 10, 0
@@ -7,9 +9,8 @@ msg4: db    "ENTRA A LA FUNCION CON PUNTERO CERO (NULL)", 10, 0
 section .text
 extern _malloc
 extern _printf
-global _insertaNodo
 
-_insertaNodo:
+_agregar_abb:
     push EBP
     mov EBP, ESP
     sub ESP, 4
@@ -20,9 +21,7 @@ _insertaNodo:
     cmp edi,esi
     je      igual
     jmp     noIgual
-    ;  ja mayor         **POSIBLES RESULTADOS
-    ;  jb menor
-    ;  je igual     
+      
     igual:      
         mov	eax, 12                    ; size of the structure
         push    eax
@@ -64,7 +63,7 @@ _insertaNodo:
       mov EBP, ESP
       push ebx
       push esi
-      call _insertaNodo
+      call _agregar_abb
       pop esi
       pop ebx
       pop ebp
@@ -98,7 +97,7 @@ _insertaNodo:
       mov EBP, ESP
       push ebx
       push esi
-      call _insertaNodo
+      call _agregar_abb
       pop esi
       pop ebx
       pop ebp
