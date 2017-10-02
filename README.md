@@ -23,3 +23,8 @@ abb_main.bat
 Archivo Ejecutable:
 main.exe
 
+Informe:
+https://docs.google.com/document/d/10YYxNejKWKUF9Xk1vuHZtqRQ5656FB9Y2SAdbaML2AE/edit#
+
+
+
