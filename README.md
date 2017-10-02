@@ -16,3 +16,10 @@ Se desea implementar en lenguaje​ ​ensamblador​ ​ las siguientes funcion
 - borrar_abb
 - mostrar_abb
 
+
+Archivo que ensambla, compila y linkea:
+abb_main.bat
+
+Archivo Ejecutable:
+main.exe
+
