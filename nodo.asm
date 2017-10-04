@@ -1,37 +1,23 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;struc   nodo
-;	valor:	resb    4
-;	ptrIzq:	resb	4
-;	ptrDer:	resb	4
-;endstruc
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
 section .data
 
-;struct:
- ;   istruc nodo
-      ;  at valor, dw     -1
-       ; at ptrIzq, db     0
-       ; at ptrDer, db    0
-  ;  iend
 
-msg1:   db     `\n\n\n*****EN ASSEMBLER INGRESO PRIMERO 8 Y LUEGO 15\nDIR.PUNTERO = %p\nDIR.NODO = %p VAL.NODO = %d\nD.pD = %p V.pD = %pD.pI = %p V.pI = %s\n`, 10, 0
+msg1:   db     `\n\n\n*****\nDIR.PUNTERO = %p\nDIR.NODO = %p VAL.NODO = %d\nD.pD = %p V.pD = %pD.pI = %p V.pI = %s\n`, 10, 0
 msg2:   db     `DIRECCION PUNTERO = %p\n`, 10, 0
 msg3:   db     "PUNTERO  = %p", 10, 0
-msg4:    db     `\nVALOR EN NODO DER: %d DIRECCION DEL PTR NODO DER: %p`, 10, 0
-msg5:    db "IMPRIMO ARBOL BINARIO EN PRE-ORDEN", 10, 0
-msgP: db "%p", 10, 0
-msnN:   db "nanan", 10, 0
+msg4:    db     `\nVALOR EN NODO DER= %d DIRECCION DEL PTR NODO DER= %p`, 10, 0
+msg5:    db "IMPRIMO ARBOL BINARIO EN PRE-ORDEN =", 10, 0
+
 
 ptrNodo dd 0
 ptrNodo2 dd 0
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 section .bss
-;ptrNodo: resb 0
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 section .text
+
     global _main
     extern _printf
     extern _scanf
@@ -41,8 +27,10 @@ section .text
     extern _mostrar_abb
     extern _buscarNodo
     extern _borrar_abb
+    
+    
 _main:
-    mov ebp, esp; for correct debugging                                 
+    mov ebp, esp                               
     push EBP
     mov EBP, ESP
     mov EBX, ptrNodo
@@ -51,15 +39,11 @@ _main:
     push ebx
     call _agregar_abb
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP
-   ; mov [ptrNodo],eax
    
-      
-        
-    
-     ;PRUEBA SEGUNDO VALOR
-    mov ebp, esp; for correct debugging                                 
+    ;PRUEBA SEGUNDO VALOR
+    mov ebp, esp                              
     push EBP
     mov EBP, ESP
     mov EBX, [ptrNodo]
@@ -71,8 +55,8 @@ _main:
     pop ebx ;add ESP, 8
     pop EBP
     
-    ;PRUEBA 3ER VALOR
-    mov ebp, esp; for correct debugging                                 
+    ;PRUEBA TERCER VALOR
+    mov ebp, esp                              
     push EBP
     mov EBP, ESP
     mov EBX, [ptrNodo]
@@ -81,11 +65,11 @@ _main:
     push ebx
     call _agregar_abb
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP
     
-    ;4to valor
-    mov ebp, esp; for correct debugging                                 
+    ;PRUEBA CUARTO VALOR
+    mov ebp, esp                                
     push EBP
     mov EBP, ESP
     mov EBX, [ptrNodo]
@@ -97,8 +81,8 @@ _main:
     pop ebx ;add ESP, 8
     pop EBP
     
-     ;4to valor
-    mov ebp, esp; for correct debugging                                 
+     ;PRUEBA QUINTO VALOR
+    mov ebp, esp                                
     push EBP
     mov EBP, ESP
     mov EBX, [ptrNodo]
@@ -107,11 +91,11 @@ _main:
     push ebx
     call _agregar_abb
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP
     
-     ;4to valor
-    mov ebp, esp; for correct debugging                                 
+     ;PRUEBA SEXTO VALOR
+    mov ebp, esp                              
     push EBP
     mov EBP, ESP
     mov EBX, [ptrNodo]
@@ -120,10 +104,10 @@ _main:
     push ebx
     call _agregar_abb
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP 
-    ;4to valor
-    mov ebp, esp; for correct debugging                                 
+    ;PRUEBA SEPTIMO VALOR
+    mov ebp, esp                                 
     push EBP
     mov EBP, ESP
     mov EBX, [ptrNodo]
@@ -132,10 +116,10 @@ _main:
     push ebx
     call _agregar_abb
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP 
-   ;4to valor
-    mov ebp, esp; for correct debugging                                 
+   ;PRUEBA OCTAVO VALOR
+    mov ebp, esp                              
     push EBP
     mov EBP, ESP
     mov EBX, [ptrNodo]
@@ -144,7 +128,7 @@ _main:
     push ebx
     call _agregar_abb
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP     
     
     ;IMPRIMO ARBOL EN PRE-ORDEN     
@@ -152,7 +136,7 @@ _main:
     call _printf
     add esp,4
     mov eax,[ptrNodo]
-    mov ebp, esp; for correct debugging                                 
+    mov ebp, esp                                
     push EBP
     mov EBP, ESP
     push eax
@@ -163,16 +147,16 @@ _main:
     ;BORRAR UN NODO
     ;PRIMERO BUSCO EL NODO SEGUN EL VALOR INGRESADO
         
-    mov ebp, esp; for correct debugging                                 
+    mov ebp, esp                                
     push EBP
     mov EBP, ESP
     mov EBX, ptrNodo
-    mov ECX,6  ;EJEMPLO SE INGRESO EL 3
+    mov ECX,6  
     push ecx
     push ebx
-    call _buscarNodo ;LLAMO A LA FUNCION C _buscarNodo
+    call _buscarNodo 
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP
     mov ecx,eax ; LA FUNCION RETORNA EL PUNTERO AL NODO CON EL VALOR INGRESADO
     
@@ -183,16 +167,16 @@ _main:
     pop ecx
     
              
-    ;LLAMO A FUNCION BORRADO
-    mov ebp, esp; for correct debugging                                 
+    ;BORRO ABB
+    mov ebp, esp                                
     push EBP
     mov EBP, ESP
     mov EBX, ptrNodo
     push ecx
     push ebx
-    call _borrar_abb ;LLAMO A LA FUNCION C _buscarNodo
+    call _borrar_abb 
     pop ecx
-    pop ebx ;add ESP, 8
+    pop ebx 
     pop EBP
              
              
@@ -202,7 +186,7 @@ _main:
     call _printf
     add esp,4
     mov eax,[ptrNodo]
-    mov ebp, esp; for correct debugging                                 
+    mov ebp, esp                                
     push EBP
     mov EBP, ESP
     push eax
