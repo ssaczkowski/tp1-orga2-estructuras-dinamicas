@@ -76,28 +76,6 @@ int main()
  return 0;
 }
  
-ptrNodoArbol buscarNodo(ptrNodoArbol *ptrRaizArbol, int valor)
-{ 
- // si el árbol está vacío no se puede borrar nada, devuelvo un null
- ptrNodoArbol *n=NULL;
- if (*ptrRaizArbol == NULL) { 
- return *n;
-	}
- else {
-  //Busco el nodo que contenga el valor buscado
- 	if (valor == (*ptrRaizArbol)->dato) {
- 		printf("SE ENCONTRO EL VALOR\n");
- 		system("PAUSE");
- 		return *ptrRaizArbol;
- 	} else if (valor < (*ptrRaizArbol)->dato) {
- 		buscarNodo(&((*ptrRaizArbol)->ptrIzq),valor);
- 			} 
-	   	   else if (valor > (*ptrRaizArbol)->dato) { 
-	   	   buscarNodo((&((*ptrRaizArbol)->prtDer)),valor);
- 			}
-				else return *n; 			
-	}
-}
  
  
 
