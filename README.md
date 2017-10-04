@@ -12,9 +12,9 @@ cualquiera es mayor que los valores contenidos en el subárbol izquierdo y menor
 contenidos en el subárbol derecho.
 Se desea implementar en lenguaje​ ​ensamblador​ ​ las siguientes funciones:
 
-* agregar_abb
-* borrar_abb
-* mostrar_abb
+agregar_abb
+borrar_abb
+mostrar_abb
 
 Además, se requiere implementar en lenguaje C un programa que realice lo siguiente:
 
