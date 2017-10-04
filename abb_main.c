@@ -15,9 +15,7 @@ typedef NodoArbol *ptrNodoArbol;
 /* Prototipos */
 extern ptrNodoArbol agregar_abb(ptrNodoArbol *ptrArbol, int valor);
 extern void mostrar_abb(ptrNodoArbol ptrArbol);
-
 //extern void borrar_abb (ptrNodoArbol *ptrArbol,ptrNodoArbol *ptrRaizArbol);
-//extern ptrNodoArbol buscarNodo(ptrNodoArbol *ptrRaizArbol, int valor);
 
 int main()
 { 
@@ -27,7 +25,6 @@ int main()
  int elemento; 
  ptrNodoArbol ptrRaiz=NULL;
  ptrNodoArbol ptrAux=NULL; 
- 
  
  printf("Insertar valores para el arbol binario inicial. ( Para cancelar ingresar 0) \n");
  do{
@@ -79,7 +76,28 @@ int main()
  return 0;
 }
  
-
+ptrNodoArbol buscarNodo(ptrNodoArbol *ptrRaizArbol, int valor)
+{ 
+ // si el árbol está vacío no se puede borrar nada, devuelvo un null
+ ptrNodoArbol *n=NULL;
+ if (*ptrRaizArbol == NULL) { 
+ return *n;
+	}
+ else {
+  //Busco el nodo que contenga el valor buscado
+ 	if (valor == (*ptrRaizArbol)->dato) {
+ 		printf("SE ENCONTRO EL VALOR\n");
+ 		system("PAUSE");
+ 		return *ptrRaizArbol;
+ 	} else if (valor < (*ptrRaizArbol)->dato) {
+ 		buscarNodo(&((*ptrRaizArbol)->ptrIzq),valor);
+ 			} 
+	   	   else if (valor > (*ptrRaizArbol)->dato) { 
+	   	   buscarNodo((&((*ptrRaizArbol)->prtDer)),valor);
+ 			}
+				else return *n; 			
+	}
+}
  
  
 

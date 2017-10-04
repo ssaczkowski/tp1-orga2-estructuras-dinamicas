@@ -1,8 +1,7 @@
-global _mostrar_abb
 
 extern _printf
 
-
+global _mostrar_abb
 
 section .data
 msg1:    db "IMPRIMO ARBOL BINARIO EN PRE-ORDEN", 10, 0
