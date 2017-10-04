@@ -18,10 +18,12 @@ Se desea implementar en lenguaje​ ​ensamblador​ ​ las siguientes funcion
 
 
 Archivo que ensambla, compila y linkea:
-abb_main.bat
+script_mainasm.bat (Main desde código asm)
+script_mainc.bat (Main desde código C)
 
 Archivo Ejecutable:
-main.exe
+mainasm.exe
+mainc.exe
 
 Informe:
 https://docs.google.com/document/d/10YYxNejKWKUF9Xk1vuHZtqRQ5656FB9Y2SAdbaML2AE/edit#
