@@ -1,4 +1,4 @@
-;  ja mayor         **POSIBLES RESULTADOS
+  ;  ja mayor         **POSIBLES RESULTADOS
 ;  jb menor
 ;  je igual     
 section .data
