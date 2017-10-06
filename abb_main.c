@@ -13,8 +13,8 @@ typedef struct nodoArbol NodoArbol;
 typedef NodoArbol *ptrNodoArbol; 
  
 /* Prototipos */
-extern ptrNodoArbol agregar_abb(ptrNodoArbol *ptrArbol, int valor);
-extern void mostrar_abb(ptrNodoArbol ptrArbol);
+extern ptrNodoArbol insertaNodo(ptrNodoArbol *ptrArbol, int valor);
+extern void imprimirArbol(ptrNodoArbol ptrArbol);
 //extern void borrar_abb (ptrNodoArbol *ptrArbol,ptrNodoArbol *ptrRaizArbol);
 
 int main()
@@ -30,7 +30,7 @@ int main()
  do{
  	printf("Ingrese un numero entero: ");
  	scanf("%d",&elemento);
- 	agregar_abb(&ptrRaiz, elemento);
+ 	insertaNodo(&ptrRaiz, elemento);
  }while(elemento!=0);
  	system("cls"); 
  do{
@@ -44,7 +44,7 @@ int main()
  			printf("INGRESAR UN NUEVO VALOR AL ARBOL\n");
  			printf("Ingrese un valor: ");
  			scanf("%d",&elemento);
- 			agregar_abb(&ptrRaiz,elemento);
+ 			insertaNodo(&ptrRaiz,elemento);
  			break;
  		case 2:
  		/*	system("cls");
@@ -66,7 +66,7 @@ int main()
  		case 3:
  			system("cls");
  			printf("IMPRIMIR ARBOL\n");
- 			mostrar_abb(ptrRaiz);
+ 			imprimirArbol(ptrRaiz);
  			printf("\n");
  			system("PAUSE");
  			break;
