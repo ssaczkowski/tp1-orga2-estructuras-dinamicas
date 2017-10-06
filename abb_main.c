@@ -4,13 +4,13 @@
  
 
 /* Prototipo de la clase ASM */
-extern void main();
+extern void main2();
 
 
 int main()
 { 
  
- main();
+ main2();
  	
  return 0;		
 }
