@@ -5,25 +5,22 @@ global _imprimirArbol
 section .data
 msg1:    db "IMPRIMO ARBOL BINARIO EN PRE-ORDEN", 10, 0
 msg2:    db `%d`,10,0
-NULL equ 0
+
 section .text
 
 
 _imprimirArbol:
-    push EBP
-    mov EBP, ESP
-    sub ESP, 4
-    mov EDI,[EBP+8] ;DIRECCION DEL PUNTERO
-    mov esi,edi
-    mov ebx,esi    
+        push EBP
+        mov EBP, ESP
+        sub ESP, 4
+        mov EDI,[EBP+8] ;DIRECCION DEL PUNTERO
+        mov esi,edi
+        mov ebx,esi    
+         
+        cmp ebx, 0 
+        je  finalizar
      
-    cmp ebx, 0 ;HAY QUE COMPARAR SI EL PUNTERO RECIBIDO ES NULL
-    je  finalizar
-  ;  jmp seguir      ;EL PUNTERO NO ES NULL, POR LO TANTO IMPRIMO
-    
-  ;  seguir:   
-              ;IMPRIMO VALOR
-        mov ebx,[ebx] ;COMO EL PUNTERO RECIBIDO NO ES NULL, TENEMOS QUE RECUPERAR EL CONTENIDO.
+        mov ebx,[ebx] 
         push ebx
         push msg2
         call _printf
@@ -45,7 +42,7 @@ _imprimirArbol:
      
         
         ;IMPRIMO RECURSIVAMENTE SUBARBOL DER
-         mov EDI,[EBP+8] ;DIRECCION DEL PUNTERO
+        mov EDI,[EBP+8] ;DIRECCION DEL PUNTERO
         ADD edi,4  
         mov edi,[edi]                           
         push EBP
