@@ -3,8 +3,9 @@ extern _printf
 global _imprimirArbol
 
 section .data
-msg1:    db "IMPRIMO ARBOL BINARIO EN PRE-ORDEN", 10, 0
-msg2:    db `%d`,10,0
+msg1:    db `{ `,0
+msg2:    db `%d `,0
+msg3:    db  ` }`,0
 
 section .text
 
@@ -13,6 +14,11 @@ _imprimirArbol:
         push EBP
         mov EBP, ESP
         sub ESP, 4
+        
+        push msg1
+        call _printf
+        add esp,4
+        
         mov EDI,[EBP+8] ;DIRECCION DEL PUNTERO
         mov esi,edi
         mov ebx,esi    
@@ -55,7 +61,10 @@ _imprimirArbol:
         
 
    finalizar:
-   
+        push msg3
+        call _printf
+        add esp,4
+           
         mov     ESP, EBP
         pop     EBP
         ret  
