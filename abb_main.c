@@ -13,7 +13,7 @@ typedef NodoArbol *ptrNodoArbol; /* sinónimo de NodoArbol* */
  
 /* Prototipo de la clase ASM */
 void preOrden(ptrNodoArbol ptrArbol);
-
+void enOrden(ptrNodoArbol ptrArbol);
 extern ptrNodoArbol insertaNodo(ptrNodoArbol *ptrArbol, int dato);
 extern void imprimirArbol(ptrNodoArbol *ptrArbol);
 
@@ -57,12 +57,22 @@ int main()
 
  	printf("\n\n");
  	imprimirArbol(&(*ptrRaiz));
+ 	printf("\n EN ORDEN:");
+ 	enOrden(&(*ptrRaiz));
 
  return 0;		
 }
  
 
- 
+ void enOrden(ptrNodoArbol ptrArbol)
+{ 
+ /* si el árbol no está vacío, entonces recórrelo */
+ if (ptrArbol != NULL) { 
+ enOrden(ptrArbol->prtDer);
+ printf("%3d", ptrArbol->dato);
+ enOrden(ptrArbol->ptrIzq);
+ }
+}
 
 
 
