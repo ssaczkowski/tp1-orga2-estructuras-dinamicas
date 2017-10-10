@@ -26,7 +26,7 @@ section .bss
 section .text
 
     
-    global _main
+    global _main2
     extern _printf
     extern _scanf
     extern _malloc
@@ -37,7 +37,7 @@ section .text
     extern _borrado
     extern _cargarDatos
     extern _cargar
-_main:
+_main2:
    push msg_ingresoDatos
    call _printf
    add esp, 4 

@@ -18,8 +18,10 @@ extern ptrNodoArbol insertaNodo(ptrNodoArbol *ptrArbol, int dato);
 extern void imprimirArbol(ptrNodoArbol *ptrArbol);
 
 
+
 int main()
 { 
+
   int ch;
   int valor;
   int ok;
@@ -55,7 +57,7 @@ int main()
 
  	printf("\n\n");
  	imprimirArbol(&(*ptrRaiz));
- 	
+
  return 0;		
 }
  
